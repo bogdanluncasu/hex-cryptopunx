@@ -6,7 +6,7 @@ import { isMobile } from 'react-device-detect';
 import "./App.css"
 import punx_gif from './assets/Punx.gif'
 import preview_gif from './assets/Preview.gif'
-import {init, handleMetaMask, mint} from "../Metamask/Metamask"
+import {init, handleMetaMask, mint} from "./components/Metamask/Metamask"
 
 const App = () => {
 
