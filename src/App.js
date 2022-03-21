@@ -7,7 +7,7 @@ import "./App.css"
 import punx_gif from './assets/Punx.gif'
 import preview_gif from './assets/Preview.gif'
 import {init, handleMetaMask, mint} from "./components/Metamask/Metamask"
-
+import { ToastContainer} from "react-toastify";
 const App = () => {
 
     const [amountToMint, setAmountToMint] = useState("1");
@@ -31,7 +31,7 @@ const App = () => {
 
     return (
         <div>
-
+        <ToastContainer id='main-toast'/>
         {!isMobile &&
             <div className='container'>
                 <div className='background'></div>
