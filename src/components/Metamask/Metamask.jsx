@@ -5,7 +5,7 @@ import 'react-toastify/dist/ReactToastify.css';
 
 const { ethereum } = window;
 const web3 = new Web3(Web3.givenProvider || "http://localhost:8545");
-const contract_address = "0x729e6b3d5cea772ea86581d72c3e931766acf695";
+const contract_address = "0xf98A10Ccd71899dB9d9e00012e951ECDe840872b";
 const psn = new web3.eth.Contract(abi, contract_address);
 var current_account = undefined;
 const states = []
