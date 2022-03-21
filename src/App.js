@@ -11,7 +11,7 @@ import {init, handleMetaMask, mint} from "./components/Metamask/Metamask"
 const App = () => {
 
     const [amountToMint, setAmountToMint] = useState("1");
-
+    const [metaMaskConnected, setMetaMaskConnected] = useState(false);
     const handleTransaction = () => {
         // Add some parameter to know if the transaction have been denied or fullfilled
         alert(`Your transaction have been parameter.`)
@@ -20,9 +20,10 @@ const App = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
         console.log(`Amount selected to mint: ${amountToMint}`)
-
+        handleMetaMask();
         mint(amountToMint)();
     }
+    init(setMetaMaskConnected);
     if (!isMobile) {
     }
     if (isMobile) {
