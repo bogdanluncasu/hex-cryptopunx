@@ -69,7 +69,7 @@ const checkMintEnabled = () => {
 }
 
 const getAmountMinted = (_state) => {
-  if(_state===undefined){
+  if(_state===undefined || !isMetaMaskInstalled()){
     return;
   }
 
