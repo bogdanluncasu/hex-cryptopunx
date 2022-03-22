@@ -79,7 +79,7 @@ const getAmountMinted = () => {
     });
   } else {
      internalToast("Unexpected error. Please contact project team if this ever shows up.", toast.TYPE.ERROR);
-     return false;
+     return 0;
   }
 }
 
