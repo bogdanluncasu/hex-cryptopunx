@@ -21,7 +21,7 @@ const SocialMedia = {
             id: 3,
             name: 'OPENSEA',
             icon: Opensea,
-            url: 'https://opensea.io/CryptoPunx_NFT',
+            url: 'https://opensea.io/collection/cryptopunx-v2',
             iconType: 'svg'
         },
         {
