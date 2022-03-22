@@ -205,4 +205,4 @@ const mint = (num) => {
   return wrapp
 }
 
-export {isMetaMaskInstalled, init, handleMetaMask, mint}
+export {isMetaMaskInstalled, init, handleMetaMask, mint, getAmountMinted}
