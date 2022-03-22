@@ -6,7 +6,7 @@ import { isMobile } from 'react-device-detect';
 import "./App.css"
 import punx_gif from './assets/Punx.gif'
 import preview_gif from './assets/Preview.gif'
-import {init, handleMetaMask, mint} from "./components/Metamask/Metamask"
+import {init, handleMetaMask, mint, getAmountMinted} from "./components/Metamask/Metamask"
 import { ToastContainer} from "react-toastify";
 const App = () => {
 
@@ -46,7 +46,7 @@ const App = () => {
                         <img src={punx_gif} alt="cryptopunx gif" />
                     </div>
                     <span>MINT PRICE - 0.0169 ETH</span>
-                    <span>TOTAL -/10000</span>
+                    <span>TOTAL {getAmountMinted()}-/10000</span>
                     <form className='mint-form' onSubmit={handleSubmit}>
                         <input
                             type="number"
@@ -90,7 +90,7 @@ const App = () => {
                         <img src={punx_gif} alt="cryptopunx gif" />
                     </div>
                     <span>MINT PRICE - 0.0169 ETH</span>
-                    <span>TOTAL -/10000</span>
+                    <span>TOTAL -{}/10000</span>
                     <form className='mint-form_M' onSubmit={handleSubmit}>
                         <input
                             type="number"

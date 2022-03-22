@@ -67,6 +67,22 @@ const checkMintEnabled = () => {
 
 }
 
+const getAmountMinted = () => {
+  if(psn!==undefined){
+    psn.methods.totalSupply().call(function (err, res) {
+      if (err) {
+        internalToast("Error raised while trying to get contract status.", toast.TYPE.INFO);
+        return 0;
+      }
+
+      return res;
+    });
+  } else {
+     internalToast("Unexpected error. Please contact project team if this ever shows up.", toast.TYPE.ERROR);
+     return false;
+  }
+}
+
 const updateCurrentAccount = (state) => {
   if(isMetaMaskInstalled()){
     ethereum.on('accountsChanged', data => {
