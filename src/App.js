@@ -95,7 +95,7 @@ const App = () => {
                         <input
                             type="number"
                             min="1"
-                            max="30"
+                            max="10000"
                             id='mint-amount-counter'
                             className='mint-amount-counter_M'
                             name='amount_to_mint'
