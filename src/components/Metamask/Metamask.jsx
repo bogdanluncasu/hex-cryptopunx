@@ -16,7 +16,7 @@ const isMetaMaskInstalled = () => {
 
 const checkNetwork = () => {
   if(ethereum.networkVersion != 1){
-    toast("You are not connected to ethereum mainnet. Network version " + ethereum.networkVersion, {
+    toast("You are not connected to ethereum mainnet.", {
         type: toast.TYPE.INFO,
         position: "top-left",
         autoClose: true,
