@@ -12,6 +12,7 @@ const App = () => {
 
     const [amountToMint, setAmountToMint] = useState("1");
     const [metaMaskConnected, setMetaMaskConnected] = useState(false);
+    const [amountMinted, setAmountMinted] = useState(0);
     const handleTransaction = () => {
         // Add some parameter to know if the transaction have been denied or fullfilled
         alert(`Your transaction have been parameter.`)
@@ -24,10 +25,7 @@ const App = () => {
         mint(amountToMint)();
     }
     init(setMetaMaskConnected);
-    if (!isMobile) {
-    }
-    if (isMobile) {
-    }
+    getAmountMinted(setAmountMinted);
 
     return (
         <div>
@@ -46,12 +44,11 @@ const App = () => {
                         <img src={punx_gif} alt="cryptopunx gif" />
                     </div>
                     <span>MINT PRICE - 0.0169 ETH</span>
-                    <span>TOTAL {getAmountMinted()}-/10000</span>
+                    <span>TOTAL {amountMinted}/10000</span>
                     <form className='mint-form' onSubmit={handleSubmit}>
                         <input
                             type="number"
                             min="1"
-                            max="30"
                             id='mint-amount-counter'
                             className='mint-amount-counter'
                             name='amount_to_mint'
@@ -90,7 +87,7 @@ const App = () => {
                         <img src={punx_gif} alt="cryptopunx gif" />
                     </div>
                     <span>MINT PRICE - 0.0169 ETH</span>
-                    <span>TOTAL -{}/10000</span>
+                    <span>TOTAL {amountMinted}/10000</span>
                     <form className='mint-form_M' onSubmit={handleSubmit}>
                         <input
                             type="number"

@@ -67,19 +67,24 @@ const checkMintEnabled = () => {
 
 }
 
-const getAmountMinted = () => {
+const getAmountMinted = (_state) => {
+  if(_state===undefined){
+    return;
+  }
+
   if(psn!==undefined){
     psn.methods.totalSupply().call(function (err, res) {
+
       if (err) {
         internalToast("Error raised while trying to get contract status.", toast.TYPE.INFO);
-        return 0;
+        _state("Unknown");
       }
 
-      return res;
+      _state(res);
     });
   } else {
      internalToast("Unexpected error. Please contact project team if this ever shows up.", toast.TYPE.ERROR);
-     return 0;
+     _state("Unknown");
   }
 }
 
