@@ -65,7 +65,7 @@ const App = () => {
                     <div className='text-div'>
                         <p>The idea for CryptoPunx came from the release of Twitters hexagon nft profile pics. The project is being stealth launched with no need for discord grinding or giveaways for whitelist spots. Just a good old classic public mint. No max mint per transaction, no max per wallet.</p>
                         <p>The collection consists of 10,000 randomly generated nfts on the ethereum blockchain. Several traits have been removed from the original Cryptopunks attributes list and a few new traits introduced. Additionally, some traits that were gender specific will now be available for male and females.</p>
-                        <p>What are our plans after launch? Well, we have some ideas but will take community feedback into account for what you would like to see! Future drops will be free to claim for Hex Cryptopunx holders!</p>
+                        <p>What are our plans after launch? Well, we have some ideas but will take community feedback into account for what you would like to see! Future drops will be free to claim for Cryptopunx holders!</p>
                     </div>
                     <div className='preview-div'>
                         <img src={preview_gif} alt="cryptopunx preview gif" />
@@ -109,7 +109,7 @@ const App = () => {
                     <div className='text-div_M'>
                         <p>The idea for CryptoPunx came from the release of Twitters hexagon nft profile pics. The project is being stealth launched with no need for discord grinding or giveaways for whitelist spots. Just a good old classic public mint. No max mint per transaction, no max per wallet.</p>
                         <p>The collection consists of 10,000 randomly generated nfts on the ethereum blockchain. Several traits have been removed from the original Cryptopunks attributes list and a few new traits introduced. Additionally, some traits that were gender specific will now be available for male and females.</p>
-                        <p>What are our plans after launch? Well, we have some ideas but will take community feedback into account for what you would like to see! Future drops will be free to claim for Hex Cryptopunx holders!</p>
+                        <p>What are our plans after launch? Well, we have some ideas but will take community feedback into account for what you would like to see! Future drops will be free to claim for Cryptopunx holders!</p>
                     </div>
                     <div className='preview-div_M'>
                         <img src={preview_gif} alt="cryptopunx preview gif" />
