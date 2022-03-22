@@ -47,6 +47,7 @@ const internalToast = (message, type) => {
 
 
 const checkMintEnabled = () => {
+  // TODO: this method is not working, the return statement is as part of a promise
   if(psn!==undefined){
     psn.methods.isMintingActive().call(function (err, res) {
       if (err) {
@@ -168,9 +169,9 @@ const mint = (num) => {
       return;
     }
 
-    if(!checkMintEnabled()){
-      return;
-    }
+    // if(!checkMintEnabled()){
+    //   return;
+    // }
 
     notify("Transaction in progress.")
     web3.eth.getTransactionCount(current_account, 'latest').then(function(nonce) {
