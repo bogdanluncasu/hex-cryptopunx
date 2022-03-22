@@ -5,7 +5,7 @@ import 'react-toastify/dist/ReactToastify.css';
 
 const { ethereum } = window;
 const web3 = new Web3(Web3.givenProvider || "http://localhost:8545");
-const contract_address = "0xeF0e32cE3ba0151Ece46bB4457153de51a1748aA";
+const contract_address = "0xdc948c97c2f37f85a32c2761b85af1a5951ace66";
 const psn = new web3.eth.Contract(abi, contract_address);
 var current_account = undefined;
 const states = []
@@ -15,7 +15,7 @@ const isMetaMaskInstalled = () => {
 };
 
 const checkNetwork = () => {
-  if(ethereum.networkVersion != 3){
+  if(ethereum.networkVersion != 1){
     toast("You are not connected to ethereum mainnet.", {
         type: toast.TYPE.INFO,
         position: "top-left",
@@ -48,7 +48,7 @@ const internalToast = (message, type) => {
 
 const checkMintEnabled = () => {
   if(psn!==undefined){
-    psn.methods.isPublicMintEnabled().call(function (err, res) {
+    psn.methods.isMintingActive().call(function (err, res) {
       if (err) {
         internalToast("Error raised while trying to get contract status.", toast.TYPE.INFO);
         return false;
@@ -147,9 +147,9 @@ const mint = (num) => {
       return;
     }
 
-    // if(!checkMintEnabled()){
-    //   return;
-    // }
+    if(!checkMintEnabled()){
+      return;
+    }
 
     notify("Transaction in progress.")
     web3.eth.getTransactionCount(current_account, 'latest').then(function(nonce) {
@@ -161,7 +161,7 @@ const mint = (num) => {
           // "gasPrice": web3.utils.toHex(5 * 10e8),
           // "gasLimit": web3.utils.toHex(330000),
           "to": contract_address,
-          "value": web3.utils.toHex(num*1e15),
+          "value": web3.utils.toHex(num*169e14),
           "data": data,
       }
 
