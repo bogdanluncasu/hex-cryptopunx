@@ -12,10 +12,6 @@ body {
     background-size: contain;
 }
 
-body::-webkit-scrollbar {
-    display: none;
-}
-
 section{
     margin-bottom: 5rem !important;
 }
@@ -256,16 +252,3 @@ h1{
     border-radius: 1rem;
     height: 12rem;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
