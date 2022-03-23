@@ -46,10 +46,9 @@ const internalToast = (message, type) => {
 }
 
 
-const checkMintEnabled = () => {
-  // TODO: this method is not working, the return statement is as part of a promise
+const checkMintEnabled = async () => {
   if(psn!==undefined){
-    psn.methods.isMintingActive().call(function (err, res) {
+    let promise = psn.methods.isMintingActive().call(function (err, res) {
       if (err) {
         internalToast("Error raised while trying to get contract status.", toast.TYPE.INFO);
         return false;
@@ -59,8 +58,9 @@ const checkMintEnabled = () => {
         internalToast("Minting is not enabled yet. Check twitter or discord announcements.", toast.TYPE.INFO);
         return false;
       }
-      return true;
+      return false;
     });
+    return await promise;
   } else {
      internalToast("Unexpected error. Please contact project team if this ever shows up.", toast.TYPE.ERROR);
      return false;
@@ -164,14 +164,15 @@ const mint = (num) => {
     });
   }
 
-  const wrapp = () => {
+  const wrapp = async () => {
     if(!checkNetwork()){
       return;
     }
 
-    // if(!checkMintEnabled()){
-    //   return;
-    // }
+    let isMintEnabled = await checkMintEnabled();
+    if(!isMintEnabled){
+      return;
+    }
 
     notify("Transaction in progress.")
     web3.eth.getTransactionCount(current_account, 'latest').then(function(nonce) {
