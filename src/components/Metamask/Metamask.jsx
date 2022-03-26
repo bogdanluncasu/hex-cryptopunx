@@ -69,7 +69,7 @@ const checkMintEnabled = async () => {
 }
 
 const getAmountMinted = (_state) => {
-  if(_state===undefined || !isMetaMaskInstalled()){
+  if(_state===undefined || !isMetaMaskInstalled() || !checkNetwork()){
     return;
   }
 
