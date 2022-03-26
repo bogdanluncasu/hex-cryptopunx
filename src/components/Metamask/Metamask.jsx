@@ -118,7 +118,7 @@ const init = (state) => {
 
 const handleMetaMask = () => {
     console.log("Handle MetaMask Connection");
-    if(isMetaMaskInstalled() && checkNetwork()){
+    if(isMetaMaskInstalled()){
       ethereum.request({ method: 'eth_requestAccounts' }).then((result) => {
         console.log("Connected as" + result[0]);
         current_account = result[0];
